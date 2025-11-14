@@ -4,47 +4,29 @@ public class main{
 
     public static void main(String[] args){
 
-//        Scanner scanner = new Scanner(System.in);
-
-            // HYPOTENUSE
-//
-//        double a;
-//        double b;
-//        double c;
-//
-//        System.out.println("Enter the lenght of first page: ");
-//        a = scanner.nextDouble();
-//
-//        System.out.println("Enter the lenght of second page: ");
-//        b = scanner.nextDouble();
-//
-//        c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-//
-//        System.out.println("The hypotenuse is: " + c);
-//
-//        scanner.close();
-
-        // Circumference -> 2πr
-        // Area -> πr^2
-        // Volume -> 4/3πr^3
-
         Scanner scanner = new Scanner(System.in);
 
-        double radius;
-        double circumference;
-        double area;
-        double volume;
+            double initial;
+            double rate;
+            double timesCompounded;
+            int years;
+            double finalAmount;
 
-        System.out.println("Enter the radius of the circle: ");
-        radius = scanner.nextDouble();
+        System.out.println("Enter an inital amount: ");
+        initial = scanner.nextDouble();
 
-        circumference = 2*Math.PI*radius;
-        area = Math.PI*Math.pow(radius, 2);
-        volume = (4.0 / 3.0)*Math.PI*Math.pow(radius,3);
+        System.out.println("Enter the % rate: ");
+        rate = scanner.nextDouble() / 100;
 
-        System.out.printf("The circumference of the circle is... → %.1f\n", circumference);
-        System.out.printf("The area of the circle is... → %.1f\n", area);
-        System.out.printf("The volume of the circle is... → %.1f\n", volume);
+        System.out.println("Enter the amount of times compounded yearly: ");
+        timesCompounded = scanner.nextDouble();
+
+        System.out.println("Enter the amount of years: ");
+        years = scanner.nextInt();
+
+        finalAmount = initial * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
+
+        System.out.printf("You'll have $%.2f in %d", finalAmount, years);
 
         scanner.close();
     }
